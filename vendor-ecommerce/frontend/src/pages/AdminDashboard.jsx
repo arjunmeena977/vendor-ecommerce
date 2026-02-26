@@ -59,18 +59,25 @@ export default function AdminDashboard() {
             </div>
 
             <div className="dashboard-content relative z-10">
-                <div className="mb-10 bg-surface/30 p-6 rounded-3xl border border-white/5 backdrop-blur-md shadow-lg inline-block w-full">
-                    <h1 className="text-3xl lg:text-4xl font-bold tracking-tight text-white flex items-center gap-3">
+                <div className="mb-6 md:mb-10 bg-surface/30 p-5 md:p-6 rounded-3xl border border-white/5 backdrop-blur-md shadow-lg w-full">
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white flex items-center gap-3">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray/50">
                             {activeTab === 'VENDORS' ? 'Vendor Management' : activeTab === 'PRODUCTS' ? 'Platform Catalog' : 'Platform Operations'}
                         </span>
                     </h1>
                 </div>
 
+                {/* Mobile Navigation */}
+                <div className="md:hidden flex overflow-x-auto gap-3 pb-2 mb-6 -mt-2 no-scrollbar">
+                    <button onClick={() => setActiveTab('VENDORS')} className={`whitespace-nowrap py-2 px-5 rounded-xl font-semibold text-sm transition-all ${activeTab === 'VENDORS' ? 'bg-danger/20 text-white border border-danger/30 shadow-lg shadow-danger/10' : 'bg-surfaceLight text-gray border border-white/5'}`}>Manage Vendors</button>
+                    <button onClick={() => setActiveTab('PRODUCTS')} className={`whitespace-nowrap py-2 px-5 rounded-xl font-semibold text-sm transition-all ${activeTab === 'PRODUCTS' ? 'bg-danger/20 text-white border border-danger/30 shadow-lg shadow-danger/10' : 'bg-surfaceLight text-gray border border-white/5'}`}>All Products</button>
+                    <button onClick={() => setActiveTab('ORDERS')} className={`whitespace-nowrap py-2 px-5 rounded-xl font-semibold text-sm transition-all ${activeTab === 'ORDERS' ? 'bg-danger/20 text-white border border-danger/30 shadow-lg shadow-danger/10' : 'bg-surfaceLight text-gray border border-white/5'}`}>Global Orders</button>
+                </div>
+
                 {activeTab === 'VENDORS' && (
                     <div className="card overflow-hidden border-t-white/10 border-l-white/10 shadow-2xl bg-surface/60 backdrop-blur-xl animate-slide-up">
-                        <div className="overflow-x-auto">
-                            <table className="w-full">
+                        <div className="overflow-x-auto w-full">
+                            <table className="w-full min-w-[700px]">
                                 <thead>
                                     <tr className="bg-surfaceLight/40">
                                         <th className="py-5 px-6 font-semibold text-gray/90 tracking-wider">Vendor Info</th>
@@ -116,8 +123,8 @@ export default function AdminDashboard() {
                 {/* Detailed view for Admin Products */}
                 {activeTab === 'PRODUCTS' && (
                     <div className="card overflow-hidden border-t-white/10 border-l-white/10 shadow-2xl bg-surface/60 backdrop-blur-xl animate-fade-in">
-                        <div className="overflow-x-auto">
-                            <table className="w-full">
+                        <div className="overflow-x-auto w-full">
+                            <table className="w-full min-w-[800px]">
                                 <thead>
                                     <tr className="bg-surfaceLight/40">
                                         <th className="py-5 px-6 font-semibold text-gray/90 tracking-wider">Product</th>
@@ -167,8 +174,8 @@ export default function AdminDashboard() {
                 {/* Detailed view for Admin Orders */}
                 {activeTab === 'ORDERS' && (
                     <div className="card overflow-hidden border-t-white/10 border-l-white/10 shadow-2xl bg-surface/60 backdrop-blur-xl animate-fade-in">
-                        <div className="overflow-x-auto">
-                            <table className="w-full">
+                        <div className="overflow-x-auto w-full">
+                            <table className="w-full min-w-[900px]">
                                 <thead>
                                     <tr className="bg-surfaceLight/40">
                                         <th className="py-5 px-6 font-semibold text-gray/90 tracking-wider">Order ID</th>

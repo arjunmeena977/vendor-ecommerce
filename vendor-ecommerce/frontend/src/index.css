@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-white/90 font-sans antialiased min-h-screen selection:bg-primary/30 selection:text-white;
+    @apply bg-background text-white/90 font-sans antialiased min-h-screen selection:bg-primary/30 selection:text-white overflow-x-hidden;
   }
 }
 
@@ -24,9 +24,7 @@
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-primary to-secondary text-white border border-white/10
-      shadow-[0_0_20px_rgba(139,92,246,0.3)]
-      hover:shadow-[0_0_30px_rgba(236,72,153,0.5)];
+    @apply bg-gradient-to-r from-primary to-secondary text-white border border-white/10 shadow-[0_0_20px_#8b5cf64d] hover:shadow-[0_0_30px_#ec489980];
   }
 
   .btn-secondary {
@@ -42,7 +40,7 @@
   }
 
   .card:hover {
-    @apply border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)];
+    @apply border-white/10 shadow-[0_8px_30px_#00000080];
   }
 
   .card-header {
@@ -70,11 +68,7 @@
   }
 
   .form-select {
-    @apply form-input appearance-none
-      bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')]
-      bg-[length:12px_12px]
-      bg-[right_1rem_center]
-      bg-no-repeat pr-10 hover:border-white/20;
+    @apply form-input appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px_12px] bg-[right_1rem_center] bg-no-repeat pr-10 hover:border-white/20;
   }
 
   .badge {
@@ -138,7 +132,7 @@
   }
 
   .dashboard-content {
-    @apply flex-1 p-6 md:p-10 overflow-y-auto;
+    @apply flex-1 p-4 md:p-10 overflow-y-auto w-full min-w-0 overflow-x-hidden;
   }
 }
 

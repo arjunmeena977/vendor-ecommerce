@@ -120,9 +120,9 @@ export const demoOrders = [
     {
         _id: 'order_1',
         user: { _id: 'customer_demo_id', name: 'Demo Customer', email: 'customer@luxe.com' },
-        products: [
-            { product: demoProducts[0], quantity: 2 },
-            { product: demoProducts[3], quantity: 1 }
+        items: [
+            { product: demoProducts[0], qty: 2, priceAtPurchase: 45.00 },
+            { product: demoProducts[3], qty: 1, priceAtPurchase: 65.50 }
         ],
         totalAmount: 155.50,
         status: 'PENDING',
@@ -133,8 +133,8 @@ export const demoOrders = [
     {
         _id: 'order_2',
         user: { _id: 'customer_demo_id', name: 'Demo Customer', email: 'customer@luxe.com' },
-        products: [
-            { product: demoProducts[2], quantity: 1 }
+        items: [
+            { product: demoProducts[2], qty: 1, priceAtPurchase: 299.00 }
         ],
         totalAmount: 299.00,
         status: 'SHIPPED',
@@ -145,8 +145,8 @@ export const demoOrders = [
     {
         _id: 'order_3',
         user: { _id: 'customer_demo_id', name: 'Demo Customer', email: 'customer@luxe.com' },
-        products: [
-            { product: demoProducts[8], quantity: 3 }
+        items: [
+            { product: demoProducts[8], qty: 3, priceAtPurchase: 28.99 }
         ],
         totalAmount: 86.97,
         status: 'DELIVERED',

@@ -127,18 +127,24 @@ export default function VendorDashboard() {
             </div>
 
             <div className="dashboard-content relative z-10">
-                <div className="flex justify-between items-center mb-10 bg-surface/30 p-6 rounded-3xl border border-white/5 backdrop-blur-md shadow-lg">
-                    <h1 className="text-3xl lg:text-4xl font-bold tracking-tight text-white flex items-center gap-4">
+                <div className="flex justify-between items-center mb-6 md:mb-10 bg-surface/30 p-5 md:p-6 rounded-3xl border border-white/5 backdrop-blur-md shadow-lg flex-wrap gap-4">
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white flex items-center gap-4">
                         {activeTab === 'PRODUCTS' ? 'Your Products' : 'Customer Orders'}
                     </h1>
                     {activeTab === 'PRODUCTS' && !showForm && (
                         <button onClick={() => {
                             setFormData({ id: null, title: '', description: '', price: '', stock: '', image: null });
                             setShowForm(true);
-                        }} className="btn btn-primary px-6 py-3 font-semibold shadow-lg shadow-primary/20 relative overflow-hidden group">
+                        }} className="btn btn-primary px-4 md:px-6 py-2.5 md:py-3 font-semibold shadow-lg shadow-primary/20 relative overflow-hidden group">
                             <span className="relative z-10 flex items-center gap-2">Add New Product</span>
                         </button>
                     )}
+                </div>
+
+                {/* Mobile Navigation */}
+                <div className="md:hidden flex overflow-x-auto gap-3 pb-2 mb-6 -mt-2 no-scrollbar">
+                    <button onClick={() => setActiveTab('PRODUCTS')} className={`whitespace-nowrap py-2 px-5 rounded-xl font-semibold text-sm transition-all ${activeTab === 'PRODUCTS' ? 'bg-primary/20 text-white border border-primary/30 shadow-lg shadow-primary/10' : 'bg-surfaceLight text-gray border border-white/5'}`}>Manage Products</button>
+                    <button onClick={() => setActiveTab('ORDERS')} className={`whitespace-nowrap py-2 px-5 rounded-xl font-semibold text-sm transition-all ${activeTab === 'ORDERS' ? 'bg-primary/20 text-white border border-primary/30 shadow-lg shadow-primary/10' : 'bg-surfaceLight text-gray border border-white/5'}`}>Customer Orders</button>
                 </div>
 
                 {activeTab === 'PRODUCTS' && showForm && (
@@ -185,8 +191,8 @@ export default function VendorDashboard() {
 
                 {activeTab === 'PRODUCTS' && !showForm && (
                     <div className="card overflow-hidden border-t-white/10 border-l-white/10 shadow-2xl bg-surface/60 backdrop-blur-xl">
-                        <div className="overflow-x-auto">
-                            <table className="w-full">
+                        <div className="overflow-x-auto w-full">
+                            <table className="w-full min-w-[800px]">
                                 <thead>
                                     <tr className="bg-surfaceLight/40">
                                         <th className="py-5 px-6 font-semibold text-gray/90 tracking-wider">Image</th>
@@ -234,8 +240,8 @@ export default function VendorDashboard() {
 
                 {activeTab === 'ORDERS' && (
                     <div className="card overflow-hidden border-t-white/10 border-l-white/10 shadow-2xl bg-surface/60 backdrop-blur-xl">
-                        <div className="overflow-x-auto">
-                            <table className="w-full">
+                        <div className="overflow-x-auto w-full">
+                            <table className="w-full min-w-[900px]">
                                 <thead>
                                     <tr className="bg-surfaceLight/40">
                                         <th className="py-5 px-6 font-semibold text-gray/90 tracking-wider">Order ID</th>
