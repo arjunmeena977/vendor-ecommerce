@@ -33,7 +33,7 @@ This platform allows vendors to register, upload products, and manage their stor
 * **Database**: MongoDB (Mongoose ORM).
 * **Authentication**: JSON Web Tokens (JWT) & bcryptjs.
 * **File Uploads**: Multer (Local storage for product images).
-
+ver
 ---
 
 ## ⚙️ Local Setup & Installation
